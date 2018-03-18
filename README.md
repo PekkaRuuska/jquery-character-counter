@@ -68,7 +68,16 @@ onBackToRange: function (count, min, max){}
 Data-atributes override options-parameters.
 
 ```html
-<textarea id="textareaExample" data-charcounter-enable="true" data-charcounter-minlength="0" data-charcounter-maxlength="160" data-charcounter-blockextra="false" data-charcounter-position="bottom" data-charcounter-counterclass="character-counter-indicator" data-charcounter-alertclass="out-of-range" data-charcounter-textformat="[used]/[max]"></textarea>
+<textarea id="textareaExample"
+data-charcounter-enable="true"
+data-charcounter-minlength="0"
+data-charcounter-maxlength="160"
+data-charcounter-blockextra="false"
+data-charcounter-position="bottom"
+data-charcounter-counterclass="character-counter-indicator"
+data-charcounter-alertclass="out-of-range"
+data-charcounter-textformat="[used]/[max]">
+</textarea>
 ```
 
 
