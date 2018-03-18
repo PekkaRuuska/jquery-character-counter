@@ -6,10 +6,24 @@ Works with inputfields and textareas as well as DOM-elements that work with cont
 - Author: Pekka Ruuska
 - License: MIT
 
-### Requirements
 
-- jQuery 1.7.0+
-- IE8+
+### Features
+
+ - Support for textarea
+ - Support for input fields
+ - Support for DOM elements that support *contenteditable*-attribute
+ - Custom minimum and maximum length for character string
+ - Customizable counter indicator text and location
+ - Prevent text input after string has reached its maximum desired length
+ - Callback functions for when string length goes over limit values
+ - Updates on *input* and *propertychange* events
+
+
+### Compatibility
+
+- jQuery 1.7.0 and up
+- IE8 and up (might work on previous versions too)
+
 
 ### Getting started
 
@@ -17,6 +31,7 @@ Works with inputfields and textareas as well as DOM-elements that work with cont
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>	
 <script type="text/javascript" src="jquery.character-counter.js"></script>
 ```
+
 
 ### Usage
 
@@ -79,7 +94,6 @@ data-charcounter-alertclass="out-of-range"
 data-charcounter-textformat="[used]/[max]">
 </textarea>
 ```
-
 
 
 | Option| Type | Value alternatives | Description |
