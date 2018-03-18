@@ -1,5 +1,7 @@
 # jquery-character-counter
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1202437.svg)](https://doi.org/10.5281/zenodo.1202437)
+
 A simple character counter.
 Works with inputfields and textareas as well as DOM-elements that work with contenteditable attribute.
 
