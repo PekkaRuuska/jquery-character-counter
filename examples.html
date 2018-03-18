@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>characterCounter</title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <script src="jquery.character-counter.js"></script>
+
+    <style>
+        label {
+            display: block;
+            margin: 20px 0 0 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Default usage</h2>
+
+    <h3>With parameters</h3>
+
+    <div>
+        <label>Textarea</label>
+        <textarea id="defaultTextarea"></textarea>
+    </div>
+
+    <div>
+        <label>Input filed</label>
+        <input type="text" id="defaultInput" />
+    </div>
+
+    <div>
+        <label>Div</label>
+        <div id="defaultElement" contenteditable="true">This is content inside a div element</div>
+    </div>
+
+    <script type="text/javascript">
+        $('#defaultTextarea').characterCounter();
+        $('#defaultInput').characterCounter();
+        $('#defaultElement').characterCounter();
+    </script>
+
+
+    <h3>With data attributes</h3>
+
+    <div>
+        <label>Textarea</label>
+        <textarea id="defaultTextareaData" data-charcount-enable="true"></textarea>
+    </div>
+    
+    <div>
+        <label>Input filed</label>
+        <input type="text" id="defaultInputData" data-charcount-enable="true" />
+    </div>
+    
+    <div>
+        <label>Div</label>
+        <div id="defaultElementData" contenteditable="true" data-charcount-enable="true">This is content inside a div element</div>
+    </div>
+
+    <hr/>
+
+
+
+    <h2>Counter text formats</h2>
+
+    <h3>With parameters</h3>
+
+    <div>
+        <label>Text format</label>
+        <textarea id="textformatTextarea"></textarea>
+    </div>
+
+    <script type="text/javascript">
+        $('#textformatTextarea').characterCounter({
+            textformat: 'Min: [min], max: [max]'
+        });
+    </script>
+
+    <h3>With data attributes</h3>
+
+    <div>
+        <label>Text format</label>
+        <textarea id="textformatTextareaData" data-charcount-enable="true" data-charcount-textformat="[used] characters of [max] used"></textarea>
+    </div>
+
+    <hr/>
+
+
+
+    <h2>Counter's range</h2>
+
+    <h3>With parameters</h3>
+
+    <div>
+        <label>Character range</label>
+        <textarea id="rangeTextarea"></textarea>
+    </div>
+
+    <script type="text/javascript">
+        $('#rangeTextarea').characterCounter({
+            textformat: 'Min: [min], max: [max]',
+            minlength: 2,
+            maxlength: 10
+        });
+
+    </script>
+
+    <h3>With data attributes</h3>
+
+    <div>
+        <label>Character range</label>
+        <textarea id="rangeTextareaData" data-charcount-enable="true" data-charcount-minlength="2" data-charcount-maxlength="10" data-charcount-textformat="Min: [min], max: [max]"></textarea>
+    </div>
+
+    <hr/>
+
+
+
+    <h2>Prevent writing more than maxlength</h2>
+    
+    <h3>With parameters</h3>
+    
+    <div>
+        <label>Can't type more than 10 characters here</label>
+        <textarea id="maxblockedTextarea"></textarea>
+    </div>
+    
+    <script type="text/javascript">
+        $('#maxblockedTextarea').characterCounter({
+            maxlength: 10,
+            blockextra: true
+        });
+    </script>
+    
+    <h3>With data attributes</h3>
+    
+    <div>
+        <label>Can't type more than 10 characters here</label>
+        <textarea id="maxblockedTextareaData" data-charcount-enable="true" data-charcount-maxlength="10" data-charcount-blockextra="true"></textarea>
+    </div>
+    
+    <hr/>
+    
+
+
+    <h2>Counter's CSS classes</h2>
+
+    <style>
+        .custom-class-name {
+            padding: 0;
+            margin: 10px 0 20px 0;
+            font-weight: bold;
+        }
+    
+        .red {
+            color: red;
+        }
+    </style>
+
+    <h3>With parameters</h3>
+
+    <div>
+        <label>Custom counter CSS class name</label>
+        <textarea id="cssClassTextarea"></textarea>
+    </div>
+
+    <div>
+        <label>Type two to ten characters</label>
+        <textarea id="alertClassTextarea"></textarea>
+    </div>
+
+    <script type="text/javascript">
+        $('#cssClassTextarea').characterCounter({
+            counterclass: 'custom-class-name'
+        });
+
+        $('#alertClassTextarea').characterCounter({
+            minlength: 2,
+            maxlength: 10,
+            alertclass: 'red'
+        });
+    </script>
+
+    <h3>With data attributes</h3>
+
+    <div>
+        <label>Custom counter CSS class name</label>
+        <textarea id="cssClassTextareaData" data-charcount-enable="true" data-charcount-counterclass="custom-class-name"></textarea>
+    </div>
+
+    <div>
+        <label>Type two to ten characters</label>
+        <textarea id="alertClassTextareaData" data-charcount-enable="true" data-charcount-minlength="2" data-charcount-maxlength="10" data-charcount-alertclass="red"></textarea>
+    </div>
+    
+    <hr/>
+
+
+
+    <h2>Counter position</h2>
+
+    <h3>With parameters</h3>
+
+    <div>
+        <label>Counter above the field</label>
+        <textarea id="counterAboveTextarea"></textarea>
+    </div>
+
+    <div>
+        <label>Counter below the field</label>
+        <textarea id="counterBelowTextarea"></textarea>
+    </div>
+
+    <div>
+        <label>Counter in an element</label>
+        <textarea id="counterInElementTextarea"></textarea>
+        <div id="countercontainer"></span>
+    </div>
+
+    <script type="text/javascript">
+        $('#counterAboveTextarea').characterCounter({
+            position: 'top'
+        });
+
+        $('#counterBelowTextarea').characterCounter({
+            position: 'bottom'
+        });
+
+        $('#counterInElementTextarea').characterCounter({
+            position: '#countercontainer'
+        });
+    </script>
+
+    <h3>With data attributes</h3>
+
+    <div>
+        <label>Counter above the field</label>
+        <textarea id="counterAboveTextareaData" data-charcount-enable="true" data-charcount-position="top"></textarea>
+    </div>
+    
+    <div>
+        <label>Counter below the field</label>
+        <textarea id="counterBelowTextareaData" data-charcount-enable="true" data-charcount-position="bottom"></textarea>
+    </div>
+    
+    <div>
+        <label>Counter in an element</label>
+        <textarea id="counterInElementTextareaData" data-charcount-enable="true" data-charcount-position=".counterspan"></textarea>
+        <span class="counterspan"></span>
+    </div>
+
+    <hr/>
+
+
+
+    <h2>Multiple counters</h2>
+
+    <h3>With parameters</h3>
+
+    <div>
+        <label>Textarea</label>
+        <div class="counterarea"></div>
+        <textarea id="multicounterTextarea"></textarea>
+        <div class="counterarea"></div>
+    </div>
+
+    <script type="text/javascript">
+        $('#multicounterTextarea').characterCounter({
+            position: '.counterarea'
+        });
+    </script>
+
+    <h3>With data attributes</h3>
+
+    <div>
+        <label>Textarea</label>
+        <div class="counterdiv"></div>
+        <textarea id="multicounterTextareaData" data-charcount-enable="true" data-charcount-position=".counterdiv"></textarea>
+        <div class="counterdiv"></div>
+    </div>
+
+    <hr/>
+
+
+
+    <h2>Mixing parameters and attributes</h2>
+
+    <div>
+        <label>You can use parameters and attributes at the same time</label>
+        <textarea id="mixedTextarea" data-charcount-minlength="2" data-charcount-textformat="Minimum is [min] and maximum [max]. So you have [left] left."></textarea>
+        <p>Data-atributes override option-parameters.</p>
+    </div>
+    
+    <script type="text/javascript">
+        $('#mixedTextarea').characterCounter({
+            maxlength: 10,
+            blockextra: true
+        });
+    </script>
+
+
+    <hr/>
+
+
+
+    <h2>Callbacks</h2>
+
+    <h3>With parameters</h3>
+    
+    <div>
+        <label>Callbacks are called if character number goes out of range or returns to range</label>
+        <textarea id="callbackTextarea"></textarea>
+    </div>
+    
+    <script type="text/javascript">
+        $('#callbackTextarea').characterCounter({
+                maxlength: 10,
+                onOutOfRange: function (count, min, max) {
+                    alert("The number of characters (" + count + ") exceeded the maximum of " + max + "!");
+                },
+                onBackToRange: function (count, min, max) {
+                    alert("The number of characters is back between " + min + " and " + max + "!");
+                }
+            });
+    </script>
+
+</body>
+
+</html>
